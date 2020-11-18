@@ -7,3 +7,10 @@ jspm_packages
 
 # Webpack directories
 .webpack
+
+# Intellij
+.idea
+
+#VScode
+.vscode
+
