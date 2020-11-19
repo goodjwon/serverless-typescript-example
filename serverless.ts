@@ -39,6 +39,17 @@ const serverlessConfiguration: Serverless = {
           }
         }
       ]
+    },
+    goodbye: {
+      handler: 'handler.goodbye',
+      events: [
+        {
+          http: {
+            method: 'get',
+            path: 'goodbye',
+          }
+        }
+      ]
     }
   }
 }
