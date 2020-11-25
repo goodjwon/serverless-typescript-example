@@ -1,14 +1,16 @@
 import service from "./src/service";
-import io from "./src/io";
+import {handler as io} from "./src/io";
 
 
 export const hello = async (event, _context) => {
-  const result = service.hello(event);
-  return io.handler.returnSuccess(result);
+  const input = io.input(event)
+  console.log('the Event', event)
+  const result = service.hello(input);
+  return io.returnSuccess(result);
 }
 
 
 export const goodbye = async (event, _context) => {
   const result = service.goodbye(event);
-  return io.handler.returnSuccess(result);
+  return io.returnSuccess(result);
 }

@@ -1,6 +1,6 @@
 export default {
     hello: data => {
-        return 'Hello'
+        return 'Hello ' + data.name
     },
 
     goodbye: data => {
