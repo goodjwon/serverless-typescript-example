@@ -1,4 +1,5 @@
 import type { Serverless } from 'serverless/aws';
+import {Table} from "aws-sdk/clients/glue";
 
 const serverlessConfiguration: Serverless = {
   service: {
@@ -27,6 +28,11 @@ const serverlessConfiguration: Serverless = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
+  },
+  resources: {
+    Resources: {
+
+    }
   },
   functions: {
     hello: {
