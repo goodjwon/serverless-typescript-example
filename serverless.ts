@@ -1,6 +1,4 @@
 import type { Serverless } from 'serverless/aws';
-import {Table} from "aws-sdk/clients/glue";
-
 const serverlessConfiguration: Serverless = {
   service: {
     name: 'serverless-typescript-example',
