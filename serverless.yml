@@ -27,17 +27,17 @@ resources:
           WriteCapacityUnits: 1
 functions:
   hello:
-    handler: 'handler.hello'
+    handler: handler.hello
     events:
       - http:
-          method: 'post'
-          path: 'hello'
+          method: post
+          path: hello
   goodbye:
-    handler: 'handler.goodbye'
+    handler: handler.goodbye
     events:
       - http:
-          method: 'get'
-          path: 'goodbye'
+          method: get
+          path: goodbye
 
 
 
