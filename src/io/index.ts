@@ -33,6 +33,6 @@ export const handler = {
 
 export default {
     handler: handler,
-    db: {},
+    db: dynamo,
     event: {}
 }

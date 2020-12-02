@@ -1,5 +1,5 @@
 export default io => ({
-    hello: async data => {
+    createBook: async data => {
         await io.db.put({
             PK: 'book',
             SK: 'function12345',
@@ -9,7 +9,7 @@ export default io => ({
         return 'Hello ' + data.name
     },
 
-    goodbye: async data => {
+    getBook: async data => {
         const book = await io.db.get({
             PK: 'book',
             SK: 'function12345',

@@ -1,5 +1,4 @@
 import type { Serverless } from 'serverless/aws';
-import {Properties} from "aws-sdk/clients/cloudformation";
 const serverlessConfiguration: Serverless = {
   service: {
     name: 'serverless-typescript-example',
@@ -27,9 +26,20 @@ const serverlessConfiguration: Serverless = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
-    iamRoleStatements:[]
-
-
+    iamRoleStatements:[
+      {
+        Effect: 'Allow',
+        Action: [
+            'dynamodb:Query',
+            'dynamodb:Scan',
+            'dynamodb:GetItem',
+            'dynamodb:PutItem',
+            'dynamodb:UpdateItem',
+            'dynamodb:DeleteItem',
+        ],
+        Resource: 'arn:aws:dynamodb:ap-northeast-2:026363199507:table/books-table'
+      }
+    ]
   },
   resources: {
     Resources: {
