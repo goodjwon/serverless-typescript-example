@@ -1,4 +1,5 @@
 import type { Serverless } from 'serverless/aws';
+import {Properties} from "aws-sdk/clients/cloudformation";
 const serverlessConfiguration: Serverless = {
   service: {
     name: 'serverless-typescript-example',
@@ -26,12 +27,16 @@ const serverlessConfiguration: Serverless = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
     },
+    iamRoleStatements:[]
+
+
   },
   resources: {
     Resources: {
       BooksTable: {
         Type: 'AWS::DynamoDB::Table',
         Properties: {
+          TableName:'books-table',
           AttributeDefinitions: [
             { AttributeName: 'PK', AttributeType: 'S' },
             { AttributeName: 'SK', AttributeType: 'S' }
