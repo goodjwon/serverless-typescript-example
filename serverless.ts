@@ -11,10 +11,17 @@ const serverlessConfiguration: Serverless = {
     webpack: {
       webpackConfig: './webpack.config.js',
       includeModules: true
-    }
+    },
+    dynamodb: {
+      stages: 'dev'
+    },
   },
   // Add the serverless-webpack plugin
-  plugins: ['serverless-webpack'],
+  plugins: [
+    'serverless-webpack',
+    'serverless-dynamodb-local',
+    'serverless-offline'
+  ],
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
